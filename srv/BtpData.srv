@@ -1,0 +1,41 @@
+# BTP
+uint8 btp_type
+uint16 source_port # only used by BTP-A
+uint16 destination_port
+uint16 destination_port_info # only used by BTP-B
+
+# GeoNet
+uint8 transport_type
+GeoNetDestination destination
+uint32 its_aid
+builtin_interfaces/Duration lifetime
+uint8 hop_limit
+TrafficClass traffic_class
+builtin_interfaces/Duration repetition_interval
+builtin_interfaces/Duration repetition_duration
+
+# Payload
+uint8[] data
+
+uint8 BTP_TYPE_A = 1
+uint8 BTP_TYPE_INTERACTIVE = 1
+uint8 BTP_TYPE_B = 2
+uint8 BTP_TYPE_NON_INTERACTIVE = 2
+
+uint8 TRANSPORT_TYPE_SHB = 1
+uint8 TRANSPORT_TYPE_TSB = 2
+uint8 TRANSPORT_TYPE_GUC = 3
+uint8 TRANSPORT_TYPE_GBC = 4
+uint8 TRANSPORT_TYPE_GAC = 5
+---
+uint8 confirm
+
+uint8 CONFIRM_ACCEPTED = 0
+uint8 CONFIRM_REJECTED_MAX_SDU_SIZE = 1
+uint8 CONFIRM_REJECTED_MAX_LIFETIME = 2
+uint8 CONFIRM_REJECTED_MIN_REPETITION_INTERVAL = 3
+uint8 CONFIRM_REJECTED_UNSUPPORTED_TRAFFIC_CLASS = 4
+uint8 CONFIRM_REJECTED_MAX_GEO_AREA_SIZE = 5
+uint8 CONFIRM_REJECTED_UNSPECIFIED = 6
+uint8 CONFIRM_REJECTED_INVALID_DESTINATION = 254
+uint8 CONFIRM_UNIMPLEMENTED = 255
