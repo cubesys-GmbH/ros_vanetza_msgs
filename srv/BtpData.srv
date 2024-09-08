@@ -14,6 +14,9 @@ TrafficClass traffic_class
 builtin_interfaces/Duration repetition_interval
 builtin_interfaces/Duration repetition_duration
 
+# Security: Service Specific Permissions (SSP)
+uint8[] permissions
+
 # Payload
 uint8[] data
 
@@ -37,5 +40,6 @@ uint8 CONFIRM_REJECTED_MIN_REPETITION_INTERVAL = 3
 uint8 CONFIRM_REJECTED_UNSUPPORTED_TRAFFIC_CLASS = 4
 uint8 CONFIRM_REJECTED_MAX_GEO_AREA_SIZE = 5
 uint8 CONFIRM_REJECTED_UNSPECIFIED = 6
+uint8 CONFIRM_REJECTED_INSUFFICIENT_PERMISSIONS = 7
 uint8 CONFIRM_REJECTED_INVALID_DESTINATION = 254
 uint8 CONFIRM_UNIMPLEMENTED = 255
